@@ -37,7 +37,7 @@ const AddNotes = () => {
         // console.log('Notes:', notes);
       
         try {
-          await axios.post("http://localhost:3001/user/add", notes, {
+          await axios.post("https://mern-crud-ngi2.onrender.com/user/add", notes, {
             headers: {
               Authorization: `${token}`,
             }

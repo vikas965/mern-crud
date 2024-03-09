@@ -27,7 +27,7 @@ const Shownotes = () => {
     const loadnotes = async () => {
         try {
             const token = localStorage.getItem('token');
-            const result = await axios.get(`http://localhost:3001/notes`,{
+            const result = await axios.get(`https://mern-crud-ngi2.onrender.com/notes`,{
                 headers: {
                   Authorization: `${token}`,
                 }
@@ -49,7 +49,7 @@ const Shownotes = () => {
     
     const deletenotes = async (id) => {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:3001/noteseach/${id}`,{
+        await axios.delete(`https://mern-crud-ngi2.onrender.com/noteseach/${id}`,{
             headers: {
               Authorization: `${token}`,
             }

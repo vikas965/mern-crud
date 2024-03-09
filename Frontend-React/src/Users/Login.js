@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './login.css';
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 // import 'react-toastify/dist/ReactToastify.css';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const isLoggedIn = localStorage.getItem('token');
-  
+
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -31,9 +31,9 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      
-      console.log({email,password});
-      const response = await axios.post("http://localhost:3001/login", {email, password});
+
+      console.log({ email, password });
+      const response = await axios.post("https://mern-crud-ngi2.onrender.com/login", { email, password });
 
       console.log(response.data.token);
 
@@ -59,17 +59,17 @@ const Login = () => {
       <h1>Login</h1>
       <form className='loginform' onSubmit={handleSubmit}>
         <label>
-        
+
           <input className='inp ' type="email" value={email} onChange={handleEmailChange} placeholder='Email' required />
         </label>
         <br />
         <label>
-      
+
           <input className='inp ' type="password" value={password} onChange={handlePasswordChange} placeholder='Password' required />
         </label>
         <br />
-    <button className='btn w-50 ' style={{background:"linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)"}} type="submit">Login</button>
-    <div>Not a User ?  <Link style={{textDecoration:"none",color:"white"}} to="/register">Register</Link></div>
+        <button className='btn w-50 ' style={{ background: "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)" }} type="submit">Login</button>
+        <div>Not a User ?  <Link style={{ textDecoration: "none", color: "white" }} to="/register">Register</Link></div>
       </form>
     </div>
   );

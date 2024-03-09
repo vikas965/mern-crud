@@ -35,7 +35,7 @@ const Showdata = () => {
         params.column = selectedColumn;
       }
 
-      const response = await axios.get('http://localhost:3001/api/data', { params });
+      const response = await axios.get('https://mern-crud-ngi2.onrender.com/api/data', { params });
       setData(response.data);
 
       if (response.data.length > 0) {

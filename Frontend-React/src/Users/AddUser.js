@@ -24,7 +24,7 @@ const AddUser = () => {
   const onSubmit= async (e)=>{
     e.preventDefault();
     // await axios.post("http://localhost:8080/user",user)
-    await axios.post("http://localhost:3001/user",user)
+    await axios.post("https://mern-crud-ngi2.onrender.com/user",user)
     navigate("/")
 }
   const {name,username,email,password} = user;

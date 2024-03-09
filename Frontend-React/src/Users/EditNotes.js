@@ -19,7 +19,7 @@ const AddNotes = () => {
     const loadNotes = async ()=>{
       // const result = await axios.get(`http://localhost:8080/user/${id}`)
       const token = localStorage.getItem('token');
-      const result = await axios.get(`http://localhost:3001/note/${id}`,{
+      const result = await axios.get(`https://mern-crud-ngi2.onrender.com/note/${id}`,{
         headers: {
           Authorization: `${token}`,
         }
@@ -52,7 +52,7 @@ const AddNotes = () => {
         e.preventDefault();
         const token = localStorage.getItem('token');
         // await axios.put(`http://localhost:8080/user/${id}`,user)
-        await axios.put(`http://localhost:3001/notesupdate/${id}`,notes,{
+        await axios.put(`https://mern-crud-ngi2.onrender.com/notesupdate/${id}`,notes,{
           headers: {
             Authorization: `${token}`,
           }

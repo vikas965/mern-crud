@@ -23,14 +23,14 @@ const handleLogout = () => {
 
   const loadusers = async () => {
     // const result = await  axios.get("http://localhost:8080/users")
-    const result = await axios.get("http://localhost:3001/users")
+    const result = await axios.get("https://mern-crud-ngi2.onrender.com/users")
     // const resultnew = await result.json();
     setusers(result.data)
     console.log(result.data);
   }
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://localhost:3001/user/${id}`)
+    await axios.delete(`https://mern-crud-ngi2.onrender.com/user/${id}`)
     loadusers();
   }
 
