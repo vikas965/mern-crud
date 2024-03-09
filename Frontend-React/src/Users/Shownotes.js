@@ -24,6 +24,12 @@ const Shownotes = () => {
         loadnotes();
     }, [])
 
+    useEffect(() => {
+        if (!isLoggedIn) {
+          // If user is not logged in, navigate to the login page
+          navigate('/login');
+        }
+      }, [isLoggedIn, navigate]);
     const loadnotes = async () => {
         try {
             const token = localStorage.getItem('token');
