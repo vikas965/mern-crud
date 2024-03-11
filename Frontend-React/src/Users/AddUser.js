@@ -31,7 +31,7 @@ const AddUser = () => {
   // const Navigatetohome = useNavigate();
   return (
     <div>
-        <form action="" onSubmit={onSubmit}>
+        <form style={{marginTop:"50px"}} action="" onSubmit={onSubmit}>
           <div className="form-inputs-add">
             <h1 style={{color:"whitesmoke"}}>Register</h1>
           <input className='inp' name='name' value={name} type="text" placeholder='Name' onChange={ChangeInput} />
